@@ -9,6 +9,5 @@ func main() {
 	hello = "Hello Go"
 	fmt.Println(hello) // Hello Go
 
-	hello = "Go Go Go Ole Ole Ole"
 	fmt.Println(hello) // Go Go Go Ole Ole Ole
 }
