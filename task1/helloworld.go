@@ -3,11 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var hello string = "Hello world"
-	fmt.Println(hello) // Hello world
-
-	hello = "Hello Go"
-	fmt.Println(hello) // Hello Go
-
-	fmt.Println(hello) // Go Go Go Ole Ole Ole
+	var hello string
+    hello = "Hello world"
+    fmt.Println(hello)
 }
