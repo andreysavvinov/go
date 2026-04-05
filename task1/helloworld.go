@@ -17,7 +17,7 @@ func main() {
     fmt.Println("nums1 == nums2:", nums1==nums2) // false
  
     nums3 := [3][2] int { {2}, {5}, }
-    nums4 := [3][2] int { {2, 1}, {5}, }
+    nums4 := [3][2] int { {2}, {5}, }
     fmt.Println("nums3 == nums4:", nums3==nums4)   // false
  
     nums5 := [4] int{3, 4, 5, 0}
