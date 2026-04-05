@@ -11,9 +11,15 @@ func main() {
 
 	fmt.Println(hello) // Go Go Go Ole Ole Ole
 
-	var numbers [5]int = [5]int{1,2,3,4,5}
-    fmt.Print("type of  element: %T\n", numbers[0])     // 1
-    fmt.Println(numbers[4])     // 5
-    numbers[0] = 87
-    fmt.Println(numbers[0])     // 87
+	nums1 := [4] int {3, 4, 5, 6}
+    nums2 := [4] int {3, 4, 5}
+ 
+    fmt.Println("nums1 == nums2:", nums1==nums2) // false
+ 
+    nums3 := [3][2] int { {2}, {5}, }
+    nums4 := [3][2] int { {2, 1}, {5}, }
+    fmt.Println("nums3 == nums4:", nums3==nums4)   // false
+ 
+    nums5 := [4] int{3, 4, 5, 0}
+    fmt.Println("nums2 == nums5:", nums2==nums5)  // true
 }
