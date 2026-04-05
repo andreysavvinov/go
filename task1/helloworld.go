@@ -1,4 +1,8 @@
 package main
+/*
+    Первая программа 
+    на языке Go
+*/
 
 import "fmt"
 
