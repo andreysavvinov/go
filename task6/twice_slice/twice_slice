@@ -1,9 +1,0 @@
-package twice_slice
-
-func SliceX2(sl []int) []int {
-	var sl2 []int
-	for _, el := range sl {
-		sl2 = append(sl2, 2*el)
-	}
-	return sl2
-}
