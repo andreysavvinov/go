@@ -1,3 +1,3 @@
-module github.com/andreysavvinov/go/task5
+module github.com/andreysavvinov/go
 
 go 1.26.1
