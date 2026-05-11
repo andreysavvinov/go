@@ -43,7 +43,7 @@ func (e *Employee) Print() {
 
 type Employee struct {
 	Name     string
-	Age      int32
+	Age      int
 	Position string
 	Salary   float32
 }
@@ -63,6 +63,7 @@ func AddEmployee(p Employee) {
 }
 
 func UpdatePSmap() {
+	position_salary = make(map[string]float32)
 	countMap := make(map[string]float32)
 	sumMap := make(map[string]float32)
 
