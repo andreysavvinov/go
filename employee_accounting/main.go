@@ -5,12 +5,33 @@ import (
 	"fmt"
 )
 
+type Printable interface {
+	Print()
+}
+
+type Employee struct {
+	Name     string
+	Age      int
+	Position string
+	Salary   float32
+}
+
 var shtat []Employee
 
 var position_salary map[string]float32
 
-type Printable interface {
-	Print()
+func (e *Employee) Print() {
+	fmt.Println(e.Info())
+}
+
+func (e *Employee) Info() string {
+	return fmt.Sprintf(
+		"Name: %s, Age: %d, Position: %s, Salary: %.2f",
+		e.Name,
+		e.Age,
+		e.Position,
+		e.Salary,
+	)
 }
 
 func FindEmployee(name string) (Employee, error) {
@@ -35,27 +56,6 @@ func AverageAge() float64 {
 	}
 
 	return float64(sum) / float64(len(shtat))
-}
-
-func (e *Employee) Print() {
-	fmt.Println(e.Info())
-}
-
-type Employee struct {
-	Name     string
-	Age      int
-	Position string
-	Salary   float32
-}
-
-func (e *Employee) Info() string {
-	return fmt.Sprintf(
-		"Name: %s, Age: %d, Position: %s, Salary: %.2f",
-		e.Name,
-		e.Age,
-		e.Position,
-		e.Salary,
-	)
 }
 
 func AddEmployee(p Employee) {
