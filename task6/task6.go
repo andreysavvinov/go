@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func SliceX2(sl []int) []int {
-	var sl2 []int
-	for _, el := range sl {
-		sl2 = append(sl2, 2*el)
+	sl2 := make([]int, len(sl))
+	for i, el := range sl {
+		sl2[i] = 2 * el
 	}
 	return sl2
 }
