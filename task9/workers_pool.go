@@ -18,6 +18,7 @@ func worker(id int, jobs <-chan int, results chan<- int, wg *sync.WaitGroup) {
 func WorkersPool() {
 	fmt.Println("-----WorkersPool-----")
 	var Q int
+
 	for {
 		fmt.Println("Введите количество входных данных: ")
 		_, err := fmt.Scanln(&Q)
@@ -29,6 +30,7 @@ func WorkersPool() {
 		}
 		break
 	}
+
 	input := make([]int, Q)
 	for i := 0; i < Q; i++ {
 		for {
@@ -45,9 +47,11 @@ func WorkersPool() {
 	}
 
 	var wg sync.WaitGroup
+
 	N := 3
 	jobs := make(chan int, N)
 	results := make(chan int, N)
+	
 	wg.Add(N)
 	for i := 1; i <= N; i++ {
 		go worker(i, jobs, results, &wg)
