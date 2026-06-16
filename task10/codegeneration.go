@@ -5,7 +5,7 @@ import "fmt"
 type Role int 
 const(
 	Admin Role = iota
-	User
+	Client
 	Guest
 )
 //go:generate stringer -type=Role

@@ -9,13 +9,13 @@ func _() {
 	// Re-run the stringer command to generate them again.
 	var x [1]struct{}
 	_ = x[Admin-0]
-	_ = x[User-1]
+	_ = x[Client-1]
 	_ = x[Guest-2]
 }
 
-const _Role_name = "AdminUserGuest"
+const _Role_name = "AdminClientGuest"
 
-var _Role_index = [...]uint8{0, 5, 9, 14}
+var _Role_index = [...]uint8{0, 5, 11, 16}
 
 func (i Role) String() string {
 	idx := int(i) - 0
