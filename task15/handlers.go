@@ -32,6 +32,11 @@ func createUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if err := ValidateUser(user); err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+
 	err = db.QueryRow(
 		`
 		INSERT INTO users(name,email,age,is_active)
@@ -60,6 +65,11 @@ func updateUser(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		http.Error(w, err.Error(), 400)
+		return
+	}
+
+	if err := ValidateUser(user); err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 
