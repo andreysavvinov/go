@@ -23,6 +23,7 @@ func main() {
 
 	http.HandleFunc("/users", usersHandler)
 	http.HandleFunc("/users/", userHandler)
+	http.HandleFunc("POST /login", Login)
 
 	log.Println("Server started on :8080")
 
