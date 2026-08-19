@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"html"
 	"io"
 	"log"
 	"net/http"
@@ -19,10 +20,11 @@ func HandleFunc(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	w.WriteHeader(http.StatusCreated)
-	name := r.URL.Query().Get("name")
-	fmt.Fprintf(w, "Привет, %s!\n", name)
-	w.Write(body)
+	safeName := html.EscapeString(r.URL.Query().Get("name"))
+	fmt.Fprintf(w, "Привет, %s!\n", safeName)
+	fmt.Fprint(w, html.EscapeString(string(body)))
 }
 
 func main() {
