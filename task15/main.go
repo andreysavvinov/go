@@ -12,7 +12,7 @@ var db *sqlx.DB
 
 func main() {
 
-	dsn := "host=localhost user=postgres password=postgres dbname=testdb port=5432 sslmode=disable"
+	dsn := "host=localhost user=postgres password=postgres dbname=userdb port=5432 sslmode=disable"
 
 	var err error
 
