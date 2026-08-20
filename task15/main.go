@@ -12,7 +12,7 @@ var db *sqlx.DB
 
 func main() {
 
-	dsn := "host=localhost user=postgres password=postgres dbname=testdb port=5432 sslmode=disable"
+	dsn := "host=localhost user=postgres password=postgres dbname=userdb port=5432 sslmode=disable"
 
 	var err error
 
@@ -23,6 +23,7 @@ func main() {
 
 	http.HandleFunc("/users", usersHandler)
 	http.HandleFunc("/users/", userHandler)
+	http.HandleFunc("POST /login", Login)
 
 	log.Println("Server started on :8080")
 
